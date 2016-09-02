@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+
+	img{
+	width:1200px;
+	height:900px;
+	position:absolute;
+	left:35px;
+	top:200px;
+	}
+
+	
+	#div1{
+		width:250px;
+		height:450px;
+		border-right:white 2px solid;
+		position:relative;
+		left:270px;
+		top:200px;}
+	
+	
+		
+		
+	#div2
+	{
+	    background: transparent;
+		width:550px;
+		height:450px;
+		border:0px;
+		position:relative;
+		left:525px;
+		bottom:250px;
+		font-family:"Microsoft Yahei";
+		font-size:24px;
+		color:#960;;
+		overflow-x:hidden;
+		}
+		
+		
+		
+		
+	#ul2{
+		clear:both;
+		
+		font-family:"华文行楷";
+		font-size: 24px;
+		color:#960;}
