@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
+<meta charset="utf-8">
 <html>
 <html>
 <head>
@@ -29,12 +30,12 @@
 <script type="text/javascript">
 $(function () {
 	
-	imgZoomInit()//Ä£¿é³õÊ¼»¯
+	imgZoomInit()//æ¨¡å—åˆå§‹åŒ–
 })
 
 
 /*
-* Í¼Æ¬·Å´óÕ¹Ê¾
+* å›¾ç‰‡æ”¾å¤§å±•ç¤º
 * 2015-01-04
 * nizilam
 */
@@ -46,38 +47,38 @@ function imgZoomInit(){
 	
 	$(".piclist li.pic .in img").each(function(i){
 		var img = $(this);
-		var realWidth ;//Ô­Ê¼¿í¶È
-		var realHeight ;//Ô­Ê¼¸ß¶È
-		var vs ;//Í¼Æ¬¿í¸ß±È
+		var realWidth ;//åŸå§‹å®½åº¦
+		var realHeight ;//åŸå§‹é«˜åº¦
+		var vs ;//å›¾ç‰‡å®½é«˜æ¯”
 		
 		realWidth = this.width;
 		realHeight = this.height;
 		vs = realWidth/realHeight;
 			
-		//ËõÂÔÍ¼±ÈÀı230:142(Ô¼µÈÓÚ1.62)
-		if(vs>=1.62){//ºáÍ¼Ôò¹Ì¶¨¸ß¶È
+		//ç¼©ç•¥å›¾æ¯”ä¾‹230:142(çº¦ç­‰äº1.62)
+		if(vs>=1.62){//æ¨ªå›¾åˆ™å›ºå®šé«˜åº¦
 			$(img).css("width","auto").css("height","142px").css("marginLeft",115-(71*realWidth/realHeight)+"px");
 		}
-		else{//ÊúÍ¼Ôò¹Ì¶¨¿í¶È
+		else{//ç«–å›¾åˆ™å›ºå®šå®½åº¦
 			$(img).css("width","230px").css("height","auto").css("marginTop",71-(115*realHeight/realWidth)+"px");
 		}
 		
-		//Í¼Æ¬·Å´óË®Æ½´¹Ö±¾ÓÖĞÏÔÊ¾
-		if(vs>=1){//ºáÍ¼»òÕı·½ĞÎ
+		//å›¾ç‰‡æ”¾å¤§æ°´å¹³å‚ç›´å±…ä¸­æ˜¾ç¤º
+		if(vs>=1){//æ¨ªå›¾æˆ–æ­£æ–¹å½¢
 			$(img).parent().parent().parent().find('.original img').height(260);
 			$(img).parent().parent().parent().find('.original img').width('auto');
 			$(img).parent().parent().parent().find('.original').css({
-				//´Ë´¦Ğè½áºÏÊµ¼ÊÇé¿ö¼ÆËã ×óÆ«ÒÆ£º.originalÊµ¼Ê¿í¶ÈµÄ¶ş·ÖÖ®Ò»
+				//æ­¤å¤„éœ€ç»“åˆå®é™…æƒ…å†µè®¡ç®— å·¦åç§»ï¼š.originalå®é™…å®½åº¦çš„äºŒåˆ†ä¹‹ä¸€
 				marginLeft: function(){
 					return -(130*realWidth/realHeight)-6;
 				},
 				left:'50%'
 			})
-		}else{//ÊúÍ¼
+		}else{//ç«–å›¾
 			$(img).parent().parent().parent().find('.original img').width(260);
 			$(img).parent().parent().parent().find('.original img').height('auto');
 			$(img).parent().parent().parent().find('.original').css({
-				//´Ë´¦Ğè½áºÏÊµ¼ÊÇé¿ö¼ÆËã ÉÏÆ«ÒÆ£º.originalÊµ¼Ê¸ß¶ÈµÄ¶ş·ÖÖ®Ò»
+				//æ­¤å¤„éœ€ç»“åˆå®é™…æƒ…å†µè®¡ç®— ä¸Šåç§»ï¼š.originalå®é™…é«˜åº¦çš„äºŒåˆ†ä¹‹ä¸€
 				marginTop: function(){
 					return -(130*realHeight/realWidth)-36;
 				},
@@ -198,7 +199,7 @@ function imgZoomInit(){
 <div id="footer" style="width:900px; margin-left:225px">
    <div id="footer1" >
        <h4>Limited Space &nbsp;&nbsp;Unlimited Creativity &nbsp;&nbsp;All rights reserved</h4></p>
-       <h5>Development team£ºWu aimei &nbsp;&nbsp;Ye hauqing&nbsp;&nbsp;Hou jielin &nbsp;&nbsp;Qin lihui</h5></p>
+       <h5>Development teamï¼šWu aimei &nbsp;&nbsp;Ye hauqing&nbsp;&nbsp;Hou jielin &nbsp;&nbsp;Qin lihui</h5></p>
 	</div>
 </div>
 </div>
