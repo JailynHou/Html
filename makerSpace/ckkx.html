@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
+<meta charset="utf-8">
 <html>
 <html>
 <head>
@@ -29,12 +30,12 @@
 <script type="text/javascript">
 $(function () {
 	
-	imgZoomInit()//Ä£¿é³õÊ¼»¯
+	imgZoomInit()//æ¨¡å—åˆå§‹åŒ–
 })
 
 
 /*
-* Í¼Æ¬·Å´óÕ¹Ê¾
+* å›¾ç‰‡æ”¾å¤§å±•ç¤º
 * 2015-01-04
 * nizilam
 */
@@ -46,38 +47,38 @@ function imgZoomInit(){
 	
 	$(".piclist li.pic .in img").each(function(i){
 		var img = $(this);
-		var realWidth ;//Ô­Ê¼¿í¶È
-		var realHeight ;//Ô­Ê¼¸ß¶È
-		var vs ;//Í¼Æ¬¿í¸ß±È
+		var realWidth ;//åŸå§‹å®½åº¦
+		var realHeight ;//åŸå§‹é«˜åº¦
+		var vs ;//å›¾ç‰‡å®½é«˜æ¯”
 		
 		realWidth = this.width;
 		realHeight = this.height;
 		vs = realWidth/realHeight;
 			
-		//ËõÂÔÍ¼±ÈÀı230:142(Ô¼µÈÓÚ1.62)
-		if(vs>=1.62){//ºáÍ¼Ôò¹Ì¶¨¸ß¶È
+		//ç¼©ç•¥å›¾æ¯”ä¾‹230:142(çº¦ç­‰äº1.62)
+		if(vs>=1.62){//æ¨ªå›¾åˆ™å›ºå®šé«˜åº¦
 			$(img).css("width","auto").css("height","142px").css("marginLeft",115-(71*realWidth/realHeight)+"px");
 		}
-		else{//ÊúÍ¼Ôò¹Ì¶¨¿í¶È
+		else{//ç«–å›¾åˆ™å›ºå®šå®½åº¦
 			$(img).css("width","230px").css("height","auto").css("marginTop",71-(115*realHeight/realWidth)+"px");
 		}
 		
-		//Í¼Æ¬·Å´óË®Æ½´¹Ö±¾ÓÖĞÏÔÊ¾
-		if(vs>=1){//ºáÍ¼»òÕı·½ĞÎ
+		//å›¾ç‰‡æ”¾å¤§æ°´å¹³å‚ç›´å±…ä¸­æ˜¾ç¤º
+		if(vs>=1){//æ¨ªå›¾æˆ–æ­£æ–¹å½¢
 			$(img).parent().parent().parent().find('.original img').height(260);
 			$(img).parent().parent().parent().find('.original img').width('auto');
 			$(img).parent().parent().parent().find('.original').css({
-				//´Ë´¦Ğè½áºÏÊµ¼ÊÇé¿ö¼ÆËã ×óÆ«ÒÆ£º.originalÊµ¼Ê¿í¶ÈµÄ¶ş·ÖÖ®Ò»
+				//æ­¤å¤„éœ€ç»“åˆå®é™…æƒ…å†µè®¡ç®— å·¦åç§»ï¼š.originalå®é™…å®½åº¦çš„äºŒåˆ†ä¹‹ä¸€
 				marginLeft: function(){
 					return -(130*realWidth/realHeight)-6;
 				},
 				left:'50%'
 			})
-		}else{//ÊúÍ¼
+		}else{//ç«–å›¾
 			$(img).parent().parent().parent().find('.original img').width(260);
 			$(img).parent().parent().parent().find('.original img').height('auto');
 			$(img).parent().parent().parent().find('.original').css({
-				//´Ë´¦Ğè½áºÏÊµ¼ÊÇé¿ö¼ÆËã ÉÏÆ«ÒÆ£º.originalÊµ¼Ê¸ß¶ÈµÄ¶ş·ÖÖ®Ò»
+				//æ­¤å¤„éœ€ç»“åˆå®é™…æƒ…å†µè®¡ç®— ä¸Šåç§»ï¼š.originalå®é™…é«˜åº¦çš„äºŒåˆ†ä¹‹ä¸€
 				marginTop: function(){
 					return -(130*realHeight/realWidth)-36;
 				},
@@ -119,12 +120,12 @@ function imgZoomInit(){
 </div>
 <div class="container" >
 	<ul class="nav">
-		<li><a href="shouye.html">Ê×Ò³</a>
-		<li><a href="ckkj.html">´´¿Í¿Õ¼ä</a>		
-		<li><a href="ckcq.html">´´¿Í´«Ææ</a>
-		<li><a href="zzcy.html">ÖÇÔì´´Òâ</a>
-		<li><a href="ckkx.html">´´¿Í¿§Ğã</a>
-		<li><a href="cxxd.html">´´ÏëĞĞ¶¯</a>
+		<li><a href="shouye.html">é¦–é¡µ</a>
+		<li><a href="ckkj.html">åˆ›å®¢ç©ºé—´</a>		
+		<li><a href="ckcq.html">åˆ›å®¢ä¼ å¥‡</a>
+		<li><a href="zzcy.html">æ™ºé€ åˆ›æ„</a>
+		<li><a href="ckkx.html">åˆ›å®¢å’–ç§€</a>
+		<li><a href="cxxd.html">åˆ›æƒ³è¡ŒåŠ¨</a>
 	</ul>
 </div>
 <div class="picbox">
@@ -135,56 +136,56 @@ function imgZoomInit(){
                 <li class="pic" id="tes">
                 <div class="in">
                     <div class="imgdiv"><img src="images/images2/1.jpg" alt="" width="392" height="368"/></div>
-                    <span style="background-color:#FFFFFF"><b>ÕÅºÆ</b>ÖĞ¹úº°³ö¡°´´¿Í¡±µÄµÚÒ»ÈË</span>
+                    <span style="background-color:#FFFFFF"><b>å¼ æµ©</b>ä¸­å›½å–Šå‡ºâ€œåˆ›å®¢â€çš„ç¬¬ä¸€äºº</span>
                 </div>
     
                 </li>
                 <li class="pic">
                 <div class="in">
                     <div class="imgdiv"><img src="images/images2/2.jpg" alt="" width="360" height="203" /></div>
-                    <span style="background-color:#FFFFFF"><b>³Â¾ÃÁØ</b>¡°´ò¹¤»ÊµÛ¡±</span>
+                    <span style="background-color:#FFFFFF"><b>é™ˆä¹…éœ–</b>â€œæ‰“å·¥çš‡å¸â€</span>
                 </div>
     
                 </li>
                 <li class="pic">
                 <div class="in">
                     <div class="imgdiv"><img src="images/images2/3.jpg" alt="" width="400" height="259" /></div>
-                    <span style="background-color:#FFFFFF"><b>¹ùÎª</b>Ò»¸öÀÏ´´¿Í </span>
+                    <span style="background-color:#FFFFFF"><b>éƒ­ä¸º</b>ä¸€ä¸ªè€åˆ›å®¢ </span>
                 </div>
     
                 </li>
                 <li class="pic">
                 <div class="in">
                     <div class="imgdiv"><img src="images/images2/4.jpg" alt="" width="650" height="437" /></div>
-                    <span style="background-color:#FFFFFF"><b>Limor Fried</b>´´¿ÍÀË³±ÀïµÄ¿¸ÆìÈËÎï</span>
+                    <span style="background-color:#FFFFFF"><b>Limor Fried</b>åˆ›å®¢æµªæ½®é‡Œçš„æ‰›æ——äººç‰©</span>
                 </div>
     
                 </li>
                 <li class="pic">
                 <div class="in">
                     <div class="imgdiv"><img src="images/images2/5.jpg" alt="" width="500" height="375" /></div>
-                    <span style="background-color:#FFFFFF"><b>ÂíĞËÈğ</b>ÉîÛÚÕâ×ù¿Æ¼¼³ÇµÄÒ»Î»´´¿ÍBOSS</span>
+                    <span style="background-color:#FFFFFF"><b>é©¬å…´ç‘</b>æ·±åœ³è¿™åº§ç§‘æŠ€åŸçš„ä¸€ä½åˆ›å®¢BOSS</span>
                 </div>
     
                 </li>
                 <li class="pic">
                 <div class="in">
                     <div class="imgdiv"><img src="images/images2/6.jpg" alt="" width="505" height="302" /></div>
-                    <span style="background-color:#FFFFFF"><b>Ë¹µÙ·ò¡¤ÎÖ×ÈÄáÑÇ¿Ë</b>Ò»¸öÀÖÓÚ·ÖÏí´´ÒâµÄÈË</span>
+                    <span style="background-color:#FFFFFF"><b>æ–¯è’‚å¤«Â·æ²ƒå…¹å°¼äºšå…‹</b>ä¸€ä¸ªä¹äºåˆ†äº«åˆ›æ„çš„äºº</span>
                 </div>
     
                 </li>
                 <li class="pic">
                 <div class="in">
                     <div class="imgdiv"><img src="images/images2/7.jpg" alt="" width="329" height="220" /></div>
-                    <span style="background-color:#FFFFFF"><b>Adrian Bowyer²©Ê¿</b>3D´òÓ¡»ú¼ÒÍ¥»¯ÔË¶¯·¢ÆğÕß</span>
+                    <span style="background-color:#FFFFFF"><b>Adrian Bowyeråšå£«</b>3Dæ‰“å°æœºå®¶åº­åŒ–è¿åŠ¨å‘èµ·è€…</span>
                 </div>
     
                 </li>
                 <li class="pic">
                 <div class="in">
                     <div class="imgdiv"><img src="images/images2/8.jpg" alt="" width="500" height="393" /></div>
-                    <span style="background-color:#FFFFFF"><b>¿ËÀïË¹¡¤°²µÂÉ­</b>¡¶´´¿Í:ĞÂ¹¤Òµ¸ïÃü¡·µÄ×÷Õß</span>
+                    <span style="background-color:#FFFFFF"><b>å…‹é‡Œæ–¯Â·å®‰å¾·æ£®</b>ã€Šåˆ›å®¢:æ–°å·¥ä¸šé©å‘½ã€‹çš„ä½œè€…</span>
                 </div>
     
                 </li>
@@ -196,8 +197,8 @@ function imgZoomInit(){
 </div>
 <div id="footer" style="width:900px; margin-left:225px" >
    <div id="footer1">
-       <h4>ÓĞÏŞ¿Õ¼ä&nbsp;&nbsp;ÎŞÏŞ´´Òâ&nbsp;&nbsp;°æÈ¨ËùÓĞ</h4></p>
-       <h5>¿ª·¢ÍÅ¶Ó£ºÎâ°®ÃÀ&nbsp;&nbsp;Ò¶»ªÇå&nbsp;&nbsp;ºî½ÜÁÕ&nbsp;&nbsp;ñûÁ¢»Ô</h5></p>
+       <h4>æœ‰é™ç©ºé—´&nbsp;&nbsp;æ— é™åˆ›æ„&nbsp;&nbsp;ç‰ˆæƒæ‰€æœ‰</h4></p>
+       <h5>å¼€å‘å›¢é˜Ÿï¼šå´çˆ±ç¾&nbsp;&nbsp;å¶åæ¸…&nbsp;&nbsp;ä¾¯æ°ç³&nbsp;&nbsp;è¦ƒç«‹è¾‰</h5></p>
 	</div>
 </div>
 </div>
