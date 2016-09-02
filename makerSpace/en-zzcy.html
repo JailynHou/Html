@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html><head>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="css/qb.css">
+	 <link rel="stylesheet" type="text/css" href="css/home_2c89410.css"/>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" type="text/css"  href="css/layout_220082c.css" />
+	<style>
+		*{ margin:0; padding:0; list-style:none}
+		img{ border:0;}
+		.lanrenzhijia_service{ width:40px; height:200px; background:url(images/jsdaima1.png) no-repeat; position:fixed; right:0px; top:300px;}
+		.lanrenzhijia_service ul{ display:block; width:160px; height:200px; float:left; position:relative;}
+		.lanrenzhijia_service ul .right_bar{ position:absolute;width:40px; height:200px; left:0; top:0; display:block;}
+		.lanrenzhijia_service ul .right_qq{ position:absolute; width:120px; height:85px; right:0; top:0; display:block;}
+		.lanrenzhijia_service ul .right_phone{ position:absolute; width:120px; height:105px; padding-top:10px;right:0; bottom:0; display:block;      	 text-align:center; color:#555; font-size:16px; font-family:'Microsoft Yahei'; text-decoration:none;}
+	</style>	
+<style type="text/css">
+	body {
+	        background-image:url(images/sb.jpg);
+			margin:0 0 0 0;
+
+		}
+
+		.nav {
+			top: 0px;
+		}
+		*{margin:0;padding:0;list-style-type:none;
+		}
+        a,img{border:0;}
+		#slider{width:843px;height:334px;margin:0 auto;}
+		#slider img{display:block;}
+		#slider-mask{
+		             background:url(../有限空间，无限创意11/images/slider1.png) no-repeat;
+		             width:1043px;
+					 height:374px;margin:
+					 40px auto 0 auto;
+					 padding-top:43px;
+					 position:relativ;
+					 margin-top:-5px;       
+					  }
+		#slider-mask #prev{  
+		                    position:absolute;
+							top:510px;
+							left:200px;
+							cursor:pointer;
+							z-index:99;
+							}
+		#slider-mask #next{
+		                    position:absolute;
+							top:510px;
+							right:200px;
+							cursor:pointer;
+							z-index:99
+							}
+		#title1{
+							background-image:url(../有限空间，无限创意11/images/t1.png);
+							width:843px;
+							height:36px;
+							margin-left:250px;
+							padding-bottom:2px;
+							}
+
+	</style>
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script>
+		$(function(){
+			$(".lanrenzhijia_service").hover(function(){
+				$(this).animate({width:'160px'});
+			},function(){
+				$(this).animate({width:'40px'});
+			});
+		});
+	</script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('#solutions li').click(function(){
+			$('#solutions .solutit2').stop().animate({
+				height:'0'
+	
+			},600);
+			$(this).find('.solutit2').stop().animate({
+				height:'500'
+	
+			},600);
+			});
+		});
+	</script>
+     
+<script type="text/javascript">
+    var ctrlBar = false;
+
+    var float_timer = null;
+    var float_max_X;
+    var float_max_Y;
+    var float_ctrl_X = true;
+    var float_ctrl_Y = true;
+    $(function () {
+        float_max_X = $(window).width();
+        float_max_Y = $(window).height();
+    });
+    function showVideoImage() {
+        if ($('.vjs-poster').css('display') == 'none') {
+        $('.vjs-poster').addClass('index').show();
+        } else {
+            setTimeout('showVideoImage()', 50);
+        }
+    }
+
+    function startMove() {
+        var obj = $('#floatAdv');
+        var limit_X = float_max_X - obj.width();
+        var limit_Y = float_max_Y - obj.height();
+        float_timer = setInterval(function () {
+            var _x = parseInt(obj.css('left'));
+            var _y = parseInt(obj.css('top'));
+            if (_x >= limit_X) {
+                float_ctrl_X = false;
+            }
+            if (_x <= 0) {
+                float_ctrl_X = true;
+            }
+            if (_y >= limit_Y) {
+                float_ctrl_Y = false;
+            }
+            if (_y <= 0) {
+                float_ctrl_Y = true;
+            }
+            if (float_ctrl_X) {
+                _x += 1;
+            } else {
+                _x -= 1;
+            }
+            if (float_ctrl_Y) {
+                _y += 1;
+            } else {
+                _y -= 1;
+            }
+            obj.css({
+                'left': _x + 'px',
+                'top': _y + 'px'
+            });
+        }, 10);
+    }
+
+    function endMove() {
+        clearInterval(float_timer);
+    }
+
+    $(document).ready(function () {
+        $('.ag-header ul li:eq(0)').addClass('current-page');
+        showVideoImage();
+
+        $('#floatAdv').mouseenter(function () {
+            endMove();
+        });
+        $('#floatAdv').mouseleave(function () {
+            startMove();
+        });
+        $('#floatAdv span').click(function (e) {
+            endMove();
+            $('#floatAdv').attr('href', 'javascript:;').removeAttr('target').hide();
+        });
+
+        $(".ag-content-customer-ele").bind("mouseenter mouseleave", function (e) {
+		    var w = $(this).width();
+		    var h = $(this).height();
+		    var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+		    var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+		    var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
+		    if (e.type == 'mouseenter') {
+                // 0:up - 1:right - 2:down - 3:left
+			    if(direction == 0) {
+				    $(this).find('div').css({
+					    'top' : '-470px',
+					    'left' : '0px'
+				    });
+				    $(this).find('div').animate({ 'top': 0 }, { queue: false, duration: 300 });
+			    } else if(direction == 2) {
+				    $(this).find('div').css({
+					    'top' : '470px',
+					    'left' : '0px'
+				    });
+				    $(this).find('div').animate({ 'top': 0 }, { queue: false, duration: 300 });
+			    } else if(direction == 1) {
+				    $(this).find('div').css({
+					    'top' : '0px',
+					    'left' : '167px'
+				    });
+				    $(this).find('div').animate({ 'left': 0 }, { queue: false, duration: 300 });
+			    } else if(direction == 3) {
+				    $(this).find('div').css({
+					    'top' : '0px',
+					    'left' : '-167px'
+				    });
+				    $(this).find('div').animate({ 'left': 0 }, { queue: false, duration: 300 });
+			    }
+			    $(this).find('span').css('color', '#fff');
+			    $(this).find('img').animate({ 'left': $(this).find('img').attr('data-hover') }, { queue: false, duration: 200 });
+		    }else{
+			    if(direction == 0) {
+			        $(this).find('div').animate({ 'top': -470 }, { queue: false, duration: 300 });
+			    } else if(direction == 2) {
+			        $(this).find('div').animate({ 'top': 470 }, { queue: false, duration: 300 });
+			    } else if(direction == 1) {
+			        $(this).find('div').animate({ 'left': 167 }, { queue: false, duration: 300 });
+			    } else if(direction == 3) {
+			        $(this).find('div').animate({ 'left': -167 }, { queue: false, duration: 300 });
+			    }
+			    $(this).find('span').css('color', '#262626');
+			    $(this).find('img').animate({ 'left': $(this).find('img').attr('data-normal') }, { queue: false, duration: 200 });
+		    }
+        });
+
+        $(".ag-content-customer-ele").bind('click', function (e) {
+
+            var navIndex = $(e.target).parent().index();
+            $('.ag-content-customer-ele-detail ul li').removeClass('current');
+            $('.ag-content-customer-ele-detail ul li').eq(navIndex).addClass('current');
+
+            $('.ag-content-customer-wrap').css('background-color', '#469acb');
+            $('.ag-content-customer-ele').animate({ 'width': 0 }, 500);
+
+            $('.ag-content-customer-ele-detail').animate({ 'width': 1002 }, {
+                duration: 500,
+                complete: function () {
+                    $('.ag-content-customer-ele-detail ul li').eq(navIndex).click();
+                }
+            });
+        });
+
+        $('.ag-content-customer-ele-detail-return').bind('click', function (e) {
+
+            $('.ag-content-customer-wrap').css('background-color', '#f1f1f1');
+            $('.ag-content-customer-ele-detail').css('overflow', 'hidden');
+            $('.ag-content-customer-ele').animate({ 'width': 167 }, 500);
+            $('.ag-content-customer-ele-detail').animate({ 'width': 0 }, 500);
+            $('.ag-content-customer-ele-detail-display').hide();
+        });
+
+        $('.ag-content-customer-ele-detail ul li').bind('click', function () {
+
+            $('.ag-content-customer-ele-detail ul li').removeClass('current');
+            $(this).addClass('current');
+            $('.ag-content-customer-ele-detail').css('overflow', 'visible');
+
+            var disIndex = $(this).index();
+            $('.ag-content-customer-ele-detail-display').hide();
+            $('.ag-content-customer-ele-detail-display').eq(disIndex).show();
+
+            // IE
+            if ("ActiveXObject" in window) {
+                $('.ag-content-customer-ele-detail-display-left').css({
+                    'left': '0px',
+                    'opacity':'1'
+                });
+                $('.ag-content-customer-ele-detail-display-right').css({
+                    'right': '-120px',
+                    'opacity': '1'
+                });
+                $('.ag-content-customer-ele-detail-display-left').eq(disIndex).animate({ 'left': 120 }, { duration: 1000, easing: 'easeOutQuint' });
+                $('.ag-content-customer-ele-detail-display-right').eq(disIndex).animate({ 'right': 0 }, { duration: 1000, easing: 'easeOutQuint' });
+            }
+        });
+
+        $('body').on('click', '.vjs-big-play-button', function () {
+            $(this).hide();
+            ctrlBar = true;
+            $('.vjs-control-bar').removeClass('vjs-fade-out').addClass('vjs-fade-in');
+        });
+
+        $('.ag-content-app-wytgg-right').click(function () {
+            if (!$('#ag-app-video').hasClass('vjs-playing')) {
+                $('.vjs-big-play-button').css('display', 'none');
+                ctrlBar = true;
+                $('.vjs-control-bar').removeClass('vjs-fade-out').addClass('vjs-fade-in');
+            }
+        });
+
+        // IE7
+        if (window.navigator.userAgent.indexOf('MSIE 7.0') >= 0) {
+            $('#ag-app-video').css({
+                'width': '570px',
+                'height': '380px',
+                'position': 'relative'
+            });
+            $('#ag-app-video').find('div.vjs-poster').css({
+                'width': '570px',
+                'height': '380px',
+                'position': 'absolute',
+                'top': '0px'
+            });
+            $('.vjs-big-play-button').css({
+                'width': '100px',
+                'height': '100px',
+                'position': 'absolute',
+                'top': '140px',
+                'left': '235px'
+            });
+            $('.ag-content-app-wytgg-right').css('overflow', 'hidden');
+        } else {
+            $('.ag-content-app-wytgg-right').hover(
+                function () {
+                    if (ctrlBar) {
+                        $('.vjs-control-bar').removeClass('vjs-fade-out').addClass('vjs-fade-in');
+                    }
+                },
+                function () {
+                    $('.vjs-control-bar').removeClass('vjs-fade-in').addClass('vjs-fade-out');
+                }
+            );
+        }
+    });
+</script>	
+	<meta name="robots" content="noindex,follow" />
+</head>
+<body>
+<div style="width:1379px">
+
+<div class="lanrenzhijia_service">
+  <ul>
+    <span class="right_bar"></span>
+     <a href="zzcy.html" class="right_qq"></a>
+	<a href="en-zzcy.html" class="right_phone"></a>
+  </ul>
+</div>
+<div>
+		<img  src="images/22.jpg" height="300px" width="1379px" >
+		<div class="yun1 yun"  > </div>
+		<div class="yun2 yun" > </div>
+		<div class="yun3 yun"> </div>	
+		<div class="yun4 yun"> </div>
+</div>
+<div class="container" >
+	<ul class="nav">
+		<li><a href="en-shouye.html">Home</a>
+		<li><a href="en-ckkj.html">Cr-space</a>	
+		<li><a href="en-ckcq.html">Cr-legend</a>
+		<li><a href="en-zzcy.html">Cr-creative</a>
+		<li><a href="en-ckkx.html">Cr-show</a>
+		<li><a href="en-cxxd.html">Cr-action</a>
+		
+	</ul>
+</div>
+<div class="ag-content-customer-wrap">
+    <div class="ag-content-customer">
+        <div class="ag-content-customer-ele">
+            <div class="ag-content-customer-ele-shadow"></div>
+            <span>The cloud control intelligent cooking machine drum.</span>
+            <img src="images/cct.jpg" data-hover="77" data-normal="85" />
+        </div>
+        <div class="ag-content-customer-ele">
+            <div class="ag-content-customer-ele-shadow"></div>
+            <span>Electronic purse</span>
+            <img    src="images/dzqb.jpg" data-hover="57" data-normal="65" />
+        </div>
+        <div class="ag-content-customer-ele">
+            <div class="ag-content-customer-ele-shadow"></div>
+            <span>Snow sports car</span>
+            <img  src="images/xdpc.jpg" style="left:96px;" data-hover="88" data-normal="96" />
+        </div>
+        <div class="ag-content-customer-ele">
+            <div class="ag-content-customer-ele-shadow"></div>
+            <span>Home press</span>
+            <img   src="images/zyj.jpg" style="left:83px;" data-hover="75" data-normal="83" />
+        </div>
+        <div class="ag-content-customer-ele">
+            <div class="ag-content-customer-ele-shadow"></div>
+            <span>Wireless mobile power supply</span>
+            <img  src="images/wuxiandianyuan.jpg"style="left:56px;" data-hover="48" data-normal="56" />
+        </div>
+        <div class="ag-content-customer-ele">
+            <div class="ag-content-customer-ele-shadow"></div>
+            <span>Quantum purification technology</span>
+            <img  src="images/liangzichunhua.jpg" style="left:83px;" data-hover="75" data-normal="83" />
+        </div>
+        <div class="ag-content-customer-ele-detail">
+            <ul>
+                <li class="acced-li-1"></li>
+                <li class="acced-li-2"></li>
+                <li class="acced-li-3"></li>
+                <li class="acced-li-4"></li>
+                <li class="acced-li-5"></li>
+                <li class="acced-li-6"></li>
+            </ul>
+            <div class="ag-content-customer-ele-detail-display">
+                <div class="ag-content-customer-ele-detail-display-left">
+                    <img src="images/cct.jpg" height="350px"  width="265px" style="margin-left:-85px" />
+                </div>
+                <div class="ag-content-customer-ele-detail-display-right">
+                    <span style="top:0px; right:45px;font-size:25px">
+					This is a drum type frying machine. The body tilt angle, inner pot rotates to drive the ingredients flip, and traditional stirring type frying machine compared and food turnover is more uniform and more uniform heating of the taste better. Is a multi-purpose cooking pot, in addition to cooking but also for in restaurants, fast food, fried noodles, fried rice, also suitable for restaurant fried row, fried eggs, fish and so on
+					</span>
+                    
+                </div>
+            </div>
+            <div class="ag-content-customer-ele-detail-display">
+                <div class="ag-content-customer-ele-detail-display-left">
+                    <img  src="images/dzqb.jpg"  height="350px"  width="265px" style="margin-left:-85px" />
+                </div>
+                <div class="ag-content-customer-ele-detail-display-right">
+                    <span style="top:60px; right:45px;font-size:25px">
+					This is a basket of future human needs of an electronic purse design, modeling from the book and the abstract of the female wallet. In style with simple, tough of visual experience, color is golden yellow, with led the tint of high purity of color matching, to people to science and technology.
+					</span>
+                    
+                </div>
+            </div>
+            <div class="ag-content-customer-ele-detail-display">
+                <div class="ag-content-customer-ele-detail-display-left">
+                    <img  src="images/xdpc.jpg"  height="350px"  width="265px" style="margin-left:-85px"/>
+                </div>
+                <div class="ag-content-customer-ele-detail-display-right">
+                    <span style="top:27px;right:45px;font-size:25px">
+			        This snow sports car to imitate the whale form chassis extraction whale jaw stripe element, has the dynamic and steady aerodynamic body, capable of running in the snow in the different environment, fast speed, strong horsepower. The engine front rear drive, the rear wheel is the track type, has the non slip and the increase the friction effect, can better in the snow.
+					</span>
+              </div>
+            </div>
+            <div class="ag-content-customer-ele-detail-display">
+                <div class="ag-content-customer-ele-detail-display-left">
+                    <img  src="images/zyj.jpg"  height="350px"  width="265px" style="margin-left:-85px"/>
+                </div>
+                <div class="ag-content-customer-ele-detail-display-right">
+                    <span style="top:0px; right:45px;font-size:25px">
+                    This design from the user experience, will usually then placed cup influence use paint box settings in the slag outlet, to prevent oil residue fall to meets cup so as to affect the use. On the shape of a unique with the modern sense of technology, it is a very suction eye, a strong sense of impact on the people, a sense of elegance to the user, a dream like life experience.
+					
+					</span>
+                    
+                </div>
+            </div>
+            <div class="ag-content-customer-ele-detail-display">
+                <div class="ag-content-customer-ele-detail-display-left">
+                    <img  src="images/wuxiandianyuan.jpg"  height="350px"  width="265px" style="margin-left:-85px"/>
+                </div>
+                <div class="ag-content-customer-ele-detail-display-right">
+                    <span style="top:0px; right:45px;font-size:25px">
+					
+				
+8mm <br>
+Card type <br>
+Can be placed in the wallet, such as credit card as convenient <br>
+Without the need for tedious data lines <br>
+Bring the joint, plug and play <br>
+Can also give two mobile phone / electronic products charge <br>
+Supports most intelligent collection of charge
+				
+				</span>
+                   
+                </div>
+            </div>
+            <div class="ag-content-customer-ele-detail-display">
+                <div class="ag-content-customer-ele-detail-display-left">
+                    <img  src="images/liangzichunhua.jpg"  height="350px"  width="265px" style="margin-left:-85px"/>
+                </div>
+                <div class="ag-content-customer-ele-detail-display-right">
+                    <span style="top:20px; right:45px;font-size:25px">
+The influence of different wavelength and frequency of energy wave on the material and the material status of the material is improved. Around the actual needs of the home, office and other people, technology as the core, the production of high-tech home appliances, to achieve a better technology to change and integrate into life, to bring people more pure life.
+					</span>
+                  
+                </div>
+            </div>
+            <div class="ag-content-customer-ele-detail-return"><span><</span>New</div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="footer" style="width:880px; margin-top:0px; margin-left:245px">
+   <div id="footer1">
+       <h5>Limited Space &nbsp;&nbsp;Unlimited Creativity &nbsp;&nbsp;All rights reserved</h5></p>
+       <h5>Development team：Wu aimei &nbsp;&nbsp;Ye hauqing&nbsp;&nbsp;Hou jielin &nbsp;&nbsp;Qin lihui</h5></p>
+	</div>
+</div>
+</div>
+</body>
+</html>
